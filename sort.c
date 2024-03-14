@@ -30,6 +30,9 @@ return ((size_t*)ptr)[-1];
 // extraMemoryAllocated counts bytes of extra memory allocated
 void mergeSort(int pData[], int l, int r){
     int leftarray[r / 2], rightarray[r/2], mergedarray[r], subindex1 = 0, subindex2 = 0, subindex3 = 0;
+    Alloc(leftarray);
+    Alloc(rightarray);
+    Alloc(mergedarray);
 
 for (int i=0;i<=r/2;i++){
     leftarray[i] = pData[i];
@@ -58,6 +61,9 @@ while(subindex2 < r/2){
     subindex2++;
     subindex3++;
 }
+DeAlloc(leftarray);
+DeAlloc(rightarray);
+DeAlloc(mergedarray);
 }
 
 
